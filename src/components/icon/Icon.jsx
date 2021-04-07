@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './Icon.css';
 
 const Icon = ({
-  name, className, size, onClick, disabled, ...attrs
+  name, className, size, onClick, disabled,
 }) => {
   const classes = classNames(
     'fa',
@@ -19,7 +19,6 @@ const Icon = ({
 
   return (
     <i
-      {...attrs}
       className={classes}
       onClick={disabled ? null : onClick}
       style={elemSize}

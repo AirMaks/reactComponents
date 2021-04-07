@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './Image.css';
 
 const Image = ({
-  src, alt, className, width, height, circle, ...attrs
+  src, alt, className, width, height, circle, style,
 }) => {
   const classes = classNames(
     className,
@@ -23,7 +23,7 @@ const Image = ({
       className={classes}
       width={width}
       height={height}
-      {...attrs}
+      style={style}
     />
   );
 };
@@ -35,6 +35,7 @@ Image.propTypes = {
   height: PropTypes.number,
   circle: PropTypes.bool,
   className: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 Image.defaultProps = {
@@ -44,6 +45,7 @@ Image.defaultProps = {
   height: 100,
   circle: false,
   className: '',
+  style: null,
 };
 
 export default Image;

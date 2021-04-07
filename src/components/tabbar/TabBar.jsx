@@ -6,28 +6,20 @@ import TabBarNav from './TabBarNav';
 import './TabBar.css';
 
 class TabBar extends React.Component {
-    static propTypes = {
-      children: PropTypes.node,
-      className: PropTypes.string,
-      vertical: PropTypes.bool,
-    }
+  constructor(props) {
+    super(props);
 
-    static defaultProps = {
-      children: null,
-      className: '',
-      vertical: false,
-    }
-
-    state = {
+    this.state = {
       activeTab: null,
-    }
+    };
+  }
 
-    componentDidMount() {
-      const { children = [] } = this.props;
-      const activeTab = this.getChildrenLabels(children)[0];
+  componentDidMount() {
+    const { children = [] } = this.props;
+    const activeTab = this.getChildrenLabels(children)[0];
 
-      this.setActiveTab(activeTab);
-    }
+    this.setActiveTab(activeTab);
+  }
 
     getChildrenLabels = children => children.map(({ props }) => props.label)
 
@@ -56,9 +48,7 @@ class TabBar extends React.Component {
 
     render() {
       const { activeTab } = this.state;
-      const {
-        children, className, vertical, ...attrs
-      } = this.props;
+      const { children, className, vertical } = this.props;
 
       const classes = classNames(
         'tab-bar',
@@ -66,7 +56,7 @@ class TabBar extends React.Component {
         { vertical },
       );
       return (
-        <div className={classes} {...attrs}>
+        <div className={classes}>
           <div className="tab-bar-nav">
             {this.renderTabs()}
           </div>
@@ -77,5 +67,16 @@ class TabBar extends React.Component {
       );
     }
 }
+TabBar.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  vertical: PropTypes.bool,
+};
+
+TabBar.defaultProps = {
+  children: null,
+  className: '',
+  vertical: false,
+};
 
 export default TabBar;

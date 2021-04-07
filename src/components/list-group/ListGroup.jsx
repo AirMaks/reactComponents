@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './ListGroup.css';
 
 const ListGroup = ({
-  children, className, horizontal, tag: Tag, ...attrs
+  children, className, horizontal, tag: Tag,
 }) => {
   const classes = classNames(
     'list-group',
@@ -14,7 +14,7 @@ const ListGroup = ({
   );
 
   return (
-    <Tag className={classes} {...attrs}>
+    <Tag className={classes}>
       {children}
     </Tag>
   );

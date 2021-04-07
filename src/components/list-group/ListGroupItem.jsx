@@ -10,7 +10,6 @@ const ListGroupItem = ({
   tag: Tag,
   disabled,
   active,
-  ...attrs
 }) => {
   const classes = classNames(
     'list-group-item',
@@ -19,12 +18,12 @@ const ListGroupItem = ({
     { active },
   );
 
-  if (attrs.href && Tag === 'li') {
+  if (Tag.href && Tag === 'li') {
     Tag = 'a';
   }
 
   return (
-    <Tag className={classes} {...attrs}>
+    <Tag className={classes}>
       {children}
     </Tag>
   );

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './ButtonGroup.css';
 
 const ButtonGroup = ({
-  children, className, vertical, ...attrs
+  children, className, vertical,
 }) => {
   const classes = classNames(
     'btn-group',
@@ -14,7 +14,7 @@ const ButtonGroup = ({
   );
 
   return (
-    <div className={classes} {...attrs}>{children}</div>
+    <div className={classes}>{children}</div>
   );
 };
 

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './Button.css';
 
 const Button = ({
-  children, onClick, className, disabled, active, ...attrs
+  children, onClick, className, disabled, active, href,
 }) => {
   const onClickAction = e => {
     if (disabled) {
@@ -21,14 +21,14 @@ const Button = ({
     { active },
   );
 
-  const Tag = attrs.href ? 'a' : 'button';
+  const Tag = href ? 'a' : 'button';
 
   return (
     <Tag
       className={classes}
       disabled={disabled}
       onClick={onClickAction}
-      {...attrs}
+      href={href}
     >
       {children}
     </Tag>
@@ -41,6 +41,7 @@ Button.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   active: PropTypes.bool,
+  href: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -49,6 +50,7 @@ Button.defaultProps = {
   className: '',
   disabled: false,
   active: false,
+  href: '',
 };
 
 export default Button;

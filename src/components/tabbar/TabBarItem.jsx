@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './TabBarItem.css';
 
 const TabBarItem = ({
-  children, label, activeTab, ...attrs
+  children, label, activeTab,
 }) => {
   const classes = classNames(
     'tab-bar-item',
@@ -13,7 +13,7 @@ const TabBarItem = ({
   );
 
   return (
-    <div className={classes} {...attrs}>
+    <div className={classes}>
       {children}
     </div>
   );

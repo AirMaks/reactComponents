@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Input = ({
-  id, className, label, error, ...attrs
+  id, className, label, error, required, type,
 }) => {
   const classes = classNames(
     'input',
@@ -15,9 +15,9 @@ const Input = ({
     <div className="input-wrapper">
       {label
           && <label className="input-label" htmlFor={id}>{label}</label>}
-      {attrs.required
+      {required
           && <span className="input-required">Required</span>}
-      <input id={id} name={id} className={classes} {...attrs} />
+      <input id={id} name={id} className={classes} type={type} />
       {error
         && <span className="input-error">{error}</span>}
     </div>
@@ -29,12 +29,16 @@ Input.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   error: PropTypes.string,
+  required: PropTypes.bool,
+  type: PropTypes.string,
 };
 
 Input.defaultProps = {
   className: '',
   label: '',
   error: '',
+  required: false,
+  type: 'text',
 };
 
 export default Input;
