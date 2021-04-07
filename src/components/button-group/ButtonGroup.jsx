@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import './ButtonGroup.css';
 
-
 const ButtonGroup = ({
   children, className, vertical, ...attrs
 }) => {
@@ -24,7 +23,6 @@ ButtonGroup.propTypes = {
   className: PropTypes.string,
   vertical: PropTypes.bool,
 };
-
 
 ButtonGroup.defaultProps = {
   children: null,

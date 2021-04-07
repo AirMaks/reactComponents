@@ -37,7 +37,6 @@ Image.propTypes = {
   className: PropTypes.string,
 };
 
-
 Image.defaultProps = {
   src: '',
   alt: 'image',

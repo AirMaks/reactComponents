@@ -35,7 +35,6 @@ Icon.propTypes = {
   disabled: PropTypes.bool,
 };
 
-
 Icon.defaultProps = {
   name: '',
   className: '',

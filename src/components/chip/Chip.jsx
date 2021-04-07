@@ -32,28 +32,24 @@ const Chip = ({
             <span className={classes}>
               <Image src={imageSrc} alt={imageAlt} width={24} height={24} />
             </span>
-            )
-            }
+            )}
 
       {withIcon
             && (
             <span className="chipIcon">
               <Icon name={iconName} />
             </span>
-            )
-            }
+            )}
       <span className="chipText">{text}</span>
       {withClose
             && (
             <span className="chipClose" onClick={onCloseClickAction}>
               <Icon name="times" />
             </span>
-            )
-            }
+            )}
     </div>
   );
 };
-
 
 Chip.propTypes = {
   text: PropTypes.string.isRequired,
