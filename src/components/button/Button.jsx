@@ -5,52 +5,55 @@ import classNames from 'classnames';
 import './Button.css';
 
 const Button = ({
-  children, onClick, className, disabled, active, href,
-}) => {
-  const onClickAction = e => {
-    if (disabled) {
-      e.preventDefault();
-    } else {
-      return onClick(e);
-    }
-  };
+                    children, onClick, className, disabled, active, href, invert
+                }) => {
+    const onClickAction = e => {
+        if (disabled) {
+            e.preventDefault();
+        } else {
+            return onClick(e);
+        }
+    };
 
-  const classes = classNames(
-    'btn',
-    className,
-    { active },
-  );
+    const classes = classNames(
+        'btn',
+        className,
+        {active},
+        {invert}
+    );
 
-  const Tag = href ? 'a' : 'button';
+    const Tag = href ? 'a' : 'button';
 
-  return (
-    <Tag
-      className={classes}
-      disabled={disabled}
-      onClick={onClickAction}
-      href={href}
-    >
-      {children}
-    </Tag>
-  );
+    return (
+        <Tag
+            className={classes}
+            disabled={disabled}
+            onClick={onClickAction}
+            href={href || null}
+
+        >
+            {children}
+        </Tag>
+    );
 };
 
 Button.propTypes = {
-  children: PropTypes.node,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  active: PropTypes.bool,
-  href: PropTypes.string,
+    children: PropTypes.node,
+    onClick: PropTypes.func,
+    className: PropTypes.string,
+    disabled: PropTypes.bool,
+    active: PropTypes.bool,
+    href: PropTypes.string,
 };
 
 Button.defaultProps = {
-  children: 'Default button',
-  onClick: () => {},
-  className: '',
-  disabled: false,
-  active: false,
-  href: '',
+    children: 'Default button',
+    onClick: () => {
+    },
+    className: '',
+    disabled: false,
+    active: false,
+    href: '',
 };
 
 export default Button;

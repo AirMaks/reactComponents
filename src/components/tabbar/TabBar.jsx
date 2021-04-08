@@ -67,6 +67,7 @@ class TabBar extends React.Component {
       );
     }
 }
+
 TabBar.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
