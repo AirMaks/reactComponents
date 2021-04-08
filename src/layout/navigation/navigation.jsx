@@ -15,6 +15,8 @@ const Navigation = () => (
         <li><NavLink to="/list-group">List Group</NavLink></li>
         <li><NavLink to="/input">Input</NavLink></li>
         <li><NavLink to="/tabbar">TabBar</NavLink></li>
+        <li><NavLink to="/tooltip">Tooltip</NavLink></li>
+        <li><NavLink to="/modal">Modal</NavLink></li>
       </ul>
     </nav>
   </div>
